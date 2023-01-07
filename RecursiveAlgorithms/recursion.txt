@@ -1,0 +1,75 @@
+Pseudo-code for Recursion
+
+return-type recursive_name( paramters ... ){
+    if(this is a base case){
+        return return_value;
+    }
+    else{
+        Determine appropriate arguments
+        Call recursive_name with those arguments
+    }
+}
+
+Queries from CEO Pseudo-code
+
+unsigned int count_attendees(){
+    unsigned int count{0};
+
+    if(I am going){
+        count = 1;
+    }
+
+    for(each-worker-reporting-to-me){
+        if(that-worker-is-going){
+            ++count;
+        }
+    }
+
+    if(there are no managers to subordinate to me){
+        return count;
+    }
+    else{
+        for(each manager reporting to me){
+            count += tell that amnager to count_attendees();
+        }
+
+        return count;
+    }
+}
+
+Searching directories Pseudo-code
+
+std::string find_file(std::string filename){
+    if(filename is-in-this-directory){
+        return directory-path-to-this-direcotry;
+    }
+
+    if(this-directory-has-no-subdirectories){
+        return "";
+    }
+    else{
+        for(each subdirectory in alphabetical order){
+            std::string result = ask-subdirectory find_file( filename );
+
+            if( result != ""){
+                return result;
+            }
+        }
+
+        return "";
+    }
+}
+
+Descendents of Genghis Khan Pseudo-code
+
+bool is_descendent_of_genghis_khan(){
+    if(I-was-born-prior-to-1155-CE){
+        return false;
+    }
+    else if(I-am-Genghis-Khan){
+        return true;
+    }
+    else{
+        return check if biological fater is_descendent_of_genghis_khan();
+    }
+}
